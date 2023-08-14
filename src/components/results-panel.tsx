@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import PingTable from "@/components/ping-table";
+import Link from "next/link";
 
 export type PanelProps = {
   ipLimit: number;
@@ -44,9 +45,18 @@ export default function ResultsPanel(props: PanelProps) {
           excludeRanges={props.excludeRanges}
         />
       </CardContent>
-      {/*<CardFooter>*/}
-      {/*  <p>Card Footer</p>*/}
-      {/*</CardFooter>*/}
+      <CardFooter className={"p-0 w-full border-t border-border px-6 py-2"}>
+        <h2
+          className={
+            "w-full text-right text-sm text-gh-text-secondary font-normal"
+          }
+        >
+          Made with ❤️ by{" "}
+          <Link href={"https://evan.studio"} className={"hover:underline"}>
+            Evan
+          </Link>
+        </h2>
+      </CardFooter>
     </Card>
   );
 }

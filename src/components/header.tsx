@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
+import NavIpList from "@/components/nav-ip-list";
+import NavAbout from "@/components/nav-about";
 
 export function Header({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
@@ -11,32 +14,24 @@ export function Header({ className }: React.HTMLAttributes<HTMLElement>) {
       )}
     >
       <div className={"text-gh-text-primary font-bold text-lg"}>
-        <h1>Cloudflare IP Ping Tester</h1>
+        <Link href={"/"}>
+          <h1>Cloudflare IP Ping Tester</h1>
+        </Link>
       </div>
       <div className={"flex items-center space-x-4 lg:space-x-6"}>
         <Link
-          href={"/examples/dashboard"}
+          href={"/"}
           className="text-sm font-medium transition-colors hover:text-primary"
         >
-          Overview
+          Tester
         </Link>
+        <NavIpList />
+        <NavAbout />
         <Link
-          href={"/examples/dashboard"}
+          href={"https://github.com/EvanNotFound/cf-ip-tester"}
           className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         >
-          Customers
-        </Link>
-        <Link
-          href={"/examples/dashboard"}
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-        >
-          Products
-        </Link>
-        <Link
-          href={"/examples/dashboard"}
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-        >
-          Settings
+          <GitHubLogoIcon />
         </Link>
       </div>
     </nav>

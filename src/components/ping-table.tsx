@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { useButtonContext } from "@/app/context/button";
 
 import { PanelProps } from "@/components/results-panel";
-import { ReloadIcon } from "@radix-ui/react-icons";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function PingTable({
   ipLimit,
@@ -24,6 +24,7 @@ export default function PingTable({
   includeRanges,
   regexPattern,
 }: PanelProps) {
+  const { toast } = useToast();
   const [latencies, setLatencies] = useState({});
   const resultsLimit = ipLimit;
   const [workingIPsDisplay, setWorkingIPsDisplay] = useState<number>(0);
@@ -41,9 +42,13 @@ export default function PingTable({
     console.log(includeRanges, excludeRanges);
 
     if (includeRanges[0] !== "" && excludeRanges[0] !== "") {
-      alert(
-        "You can't use both include and exclude ranges at the same time. Please choose one or the other.",
-      );
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "You can't include and exclude ranges at the same time",
+      });
+
+      return;
     } else if (includeRanges[0] !== "") {
       const regex = new RegExp(
         includeRanges
