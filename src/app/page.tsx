@@ -21,9 +21,15 @@ export default function Home() {
   const scanIPs = (values: z.infer<typeof formSchema>) => {
     setIPLimit(values.ipNumber);
     setMaxLatency(values.maxLatency);
-    setRegexPattern(values.regexPattern);
-    setIncludeRanges(values.includeRanges.split(","));
-    setExcludeRanges(values.excludeRanges.split(","));
+    if (values.regexPattern) {
+      setRegexPattern(values.regexPattern);
+    }
+    if (values.includeRanges) {
+      setIncludeRanges(values.includeRanges.split(","));
+    }
+    if (values.excludeRanges) {
+      setExcludeRanges(values.excludeRanges.split(","));
+    }
 
     setTriggerTestIPs(triggerTestIPs + 1);
     setIsScanning(true);

@@ -1,5 +1,5 @@
 {
-  "name": "cf-warp-ip-scanner",
+  "name": "cf-ip-tester",
   "version": "0.1.0",
   "private": true,
   "scripts": {
