@@ -40,7 +40,7 @@ export default function Home() {
       <Header />
       <main
         className={
-          "h-screen px-32 pt-32 pb-12 flex gap-32 flex-row justify-center"
+          "sm:h-screen px-8 sm:px-16 lg:px-32 pt-32 pb-12 flex gap-12 sm:gap-16 lg:gap-32 flex-col sm:flex-row justify-center"
         }
       >
         <InputForm onSubmit={scanIPs} />

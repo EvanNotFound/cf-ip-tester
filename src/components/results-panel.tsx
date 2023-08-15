@@ -24,7 +24,7 @@ export default function ResultsPanel(props: PanelProps) {
   return (
     <Card
       className={
-        "w-1/2 h-full overflow-y-auto border border-border rounded-3xl shadow-xl flex flex-col justify-between"
+        "w-full sm:w-1/2 h-full overflow-y-auto border border-border rounded-3xl shadow-xl flex flex-col justify-between"
       }
     >
       <CardHeader

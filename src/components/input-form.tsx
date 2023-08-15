@@ -44,14 +44,14 @@ export default function InputForm({ onSubmit }: any) {
   });
 
   return (
-    <div className={"w-1/2"}>
+    <div className={"w-full sm:w-1/2"}>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(scanIPs)}
-          className="h-full flex flex-col justify-between gap-12"
+          className="h-full flex flex-col justify-between gap-10 sm:gap-12"
         >
-          <section className={"space-y-7"}>
-            <div className={"flex flex-row gap-8"}>
+          <section className={"space-y-5 sm:space-y-7"}>
+            <div className={"flex flex-row gap-6 sm:gap-8"}>
               <div className={"w-1/2"}>
                 <FormField
                   control={form.control}
