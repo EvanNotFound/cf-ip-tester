@@ -35,7 +35,7 @@ export default function NavAbout() {
           </Link>
           <br />
           My Portfolio:{" "}
-          <Link href={"https://evan.studio"} className={"underline"}>
+          <Link href={"https://evannotfound.com"} className={"underline"}>
             Evan
           </Link>
           <br />
